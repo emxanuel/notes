@@ -1,0 +1,168 @@
+@import url('https://fonts.googleapis.com/css2?family=Gabarito&display=swap');
+
+:root{
+  --blue: #3E517A;
+  --gray: #A2ABAB
+}
+
+*{
+  margin: 0px;
+  font-family: 'Gabarito', cursive;
+}
+
+.container{
+  display: flex;
+  flex-direction: column;
+}
+
+.navbar{
+  width: 100%;
+  background-color: var(--blue);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 4rem;
+}
+
+.new-button{
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.new-button p{
+  color: var(--blue);
+}
+
+.new-button button{
+  width: 2rem;
+  aspect-ratio: 1/1;
+  border: none;
+  background-color: var(--blue);
+  border-radius: 100%;
+  transition-duration: 200ms;
+  cursor: pointer;
+}
+
+.new-button button:hover{
+  transform: rotateZ(45deg);
+  background-color: var(--gray);
+}
+
+.new-button svg{
+  color: white;
+}
+
+.input{
+  height: 10rem;
+  display: flex;
+  gap: 5px;
+  animation: init;
+  animation-duration: 300ms;
+  animation-fill-mode: forwards;
+}
+
+@keyframes init {
+  from{
+    opacity: 0;
+    scale: 0;
+  }
+  to{
+    opacity: 1;
+    scale: 1;
+  }
+}
+
+.input textarea{
+  resize: none;
+  height: 6rem;
+  width: 147px;
+}
+
+.input button{
+  background-color: var(--blue);
+  border: none;
+  color: white;
+  height: 1.4rem;
+  transition-duration: 200ms;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+.input button:hover{
+  background-color: var(--gray);
+}
+
+.input input{
+  height: 1rem;
+  width: 9rem;
+}
+
+.new-button-container{
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  width: 11rem;
+}
+
+.note{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 18rem;
+  min-height: 18rem;
+  border: 1px solid var(--gray);
+  position: relative;
+  gap: 10px;
+  border-radius: 2rem;
+  padding: 2rem
+  ;
+}
+
+.note .date{
+  position: absolute;
+  bottom: 2rem;
+  right: 2rem;
+}
+
+.note .body{
+  align-self: flex-start;
+}
+
+.notShow{
+  display: none;
+}
+
+.hidden{
+  animation: exit;
+  animation-duration: 300ms;
+  animation-fill-mode: forwards;
+}
+
+@keyframes exit {
+  from{
+    scale: 1;
+    opacity: 1;
+  }
+  to{
+    scale: 0;
+    opacity: 0;
+  }
+}
+
+.notes{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 4rem;
+  padding: 2rem;
+  place-items: center ;
+}
